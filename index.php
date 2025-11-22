@@ -1,5 +1,6 @@
 <?php
  include_once("templates/header.php");
+ include_once("process/pizza.php");
 ?>
     <!-- Bootstrap JS -->
     <div id="main-banner">
@@ -15,22 +16,38 @@
                             <label for="borda">Borda</label>
                             <select name="borda" id="borda" class="form-control">
                                 <option value="">Selecione a borda</option>
+                                  
+                                <?php foreach($bordas as $borda): ?>
+                                    <option value="<?= $borda['id']?>"><?= $borda["tipo"] ?></option>
+                                <?php endforeach; ?>    
+                                
+
                             </select>
                         </div>
                         <div class="form-grup">
                             <label for="massa">Massa</label>
                             <select name="massa" id="massa" class="form-control">
                                 <option value="">Selecione a massa</option>
+
+                                <?php foreach($massas as $massa): ?>
+                                    <option value="<?= $massa['id']?>"><?= $massa["tipo"] ?></option>
+                                <?php endforeach; ?>
+
                             </select>
                         </div>
                         <div class="form-grup">
                             <label for="sabores">Sabores: (Máximo 3)</label>
                             <select multiple name="sabores[]" id="sabores" class="form-control">
+
+
+                            <?php foreach($sabores as $sabor): ?>
+                                <option value="<?= $sabor['id']?>"><?= $sabor["nome"] ?></option>
+                            <?php endforeach; ?>
                                 
                             </select>
                         </div>
                         <div class="form-grup">
-                            <input type="submit" class="btn btn-primary" value="Fazer Pedido!">
+                            <input type="submit" class="btn btn-primary" value="Faça seu Pedido!">
                         </div>
                     </form>
                 </div>

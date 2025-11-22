@@ -70,6 +70,7 @@ html, body {
 }
 
 .btn.btn-primary {
+    margin-top: 30px;
     background-color: #000;
     border-color: #000;
 }
